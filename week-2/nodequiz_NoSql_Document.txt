@@ -1,0 +1,81 @@
+{
+    'id': '1234',
+    'firstName: 'William',
+    'lastName': 'Thomason',
+    'answersGiven': [
+        {
+         'quizeId': '1234',
+         'answers': [
+             '1a', '2c', '3b', '4b', '5d',
+             '6c', '7a', '8d', '9b', '10c'
+         ]
+        },
+        {
+         'quizeId': '1235',
+         'answers': [
+             '1a', '2c', '3b', '4b', '5d',
+             '6c', '7a', '8d', '9b', '10c'
+         ]
+        }  
+    ],
+    'quize': [
+        {
+            'id': '1234',
+            'subject': 'Restful API',
+            'dateCompleted': 'May 2 2019',
+            'score': 0.8,
+            'presentation':{
+                'id': '1234',
+                'path': '/public/presentation.example'
+            },
+            'questions': [
+                {
+                    'id': '1234',
+                    'question': 'What is?',
+                    'A': 'API',
+                    'B': 'State',
+                    'C': 'Restful',
+                    'D': 'None',
+                    'Correct': 'State',
+                },
+                {
+                    'id': '1235',
+                    'question': 'What is?',
+                    'A': 'API',
+                    'B': 'State',
+                    'C': 'Restful',
+                    'D': 'None',
+                    'Correct': 'State',
+                }
+            ]
+        },
+        {
+            'id': '1224',
+            'subject': 'Restful API',
+            'presentation':{
+                'id': '1224',
+                'path': '/public/presentation.example'
+            },
+            'questions': [
+                {
+                    'id': '1234',
+                    'question': 'What is?',
+                    'A': 'API',
+                    'B': 'State',
+                    'C': 'Restful',
+                    'D': 'None',
+                    'Correct': 'State',
+                },
+                {
+                    'id': '1235',
+                    'question': 'What is?',
+                    'A': 'API',
+                    'B': 'State',
+                    'C': 'Restful',
+                    'D': 'None',
+                    'Correct': 'State',
+                }
+            ]
+        }
+    ]
+}
