@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: app.module.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: app.module.ts
+======================================
+*/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

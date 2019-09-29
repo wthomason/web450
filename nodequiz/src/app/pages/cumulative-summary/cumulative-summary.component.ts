@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: cumulative-summary.component.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: cumulative-summary.component.ts
+======================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

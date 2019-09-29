@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: cumulative-summary.component.spec.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: cumulative-summary.component.spec.ts
+======================================
+*/
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CumulativeSummaryComponent } from './cumulative-summary.component';

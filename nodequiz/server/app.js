@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: app.js
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: app.js for api
+======================================
+*/
+
 const express = require('express');
 const http = require('http');
 const morgan = require('morgan');

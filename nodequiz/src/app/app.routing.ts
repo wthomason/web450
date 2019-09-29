@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: app.routing.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: app.routing.ts
+======================================
+*/
+
 import {Routes} from '@angular/router';
 import {BaseLayoutComponent} from './shared';
 import {AuthLayoutComponent} from './shared/auth-layout/auth-layout.component';

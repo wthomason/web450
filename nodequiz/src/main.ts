@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: main.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: main.ts
+======================================
+*/
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

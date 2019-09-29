@@ -1,3 +1,12 @@
+/*
+=====================================
+  ; Title: app.po.ts
+  ; Author: William Thomason
+  ; Date: September 29 2019
+  ; Description: app.po.ts
+======================================
+*/
+
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
