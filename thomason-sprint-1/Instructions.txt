@@ -1,0 +1,7 @@
+Instructions
+cd to nodeQuize folder
+run ng build
+run node server/app.js
+navigate in browser to localhost:3000
+
+I had issues with mongoDB not allowing the connection. I had to whitelist IP address. 
