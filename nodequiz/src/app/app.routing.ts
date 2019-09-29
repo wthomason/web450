@@ -9,6 +9,16 @@ import {CumulativeSummaryComponent} from './pages/cumulative-summary/cumulative-
 
 export const AppRoutes: Routes = [
   {
+    path: '',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: LoginComponent
+      }
+    ]
+  },
+  {
     path: 'dashboard',
     component: BaseLayoutComponent,
     children: [

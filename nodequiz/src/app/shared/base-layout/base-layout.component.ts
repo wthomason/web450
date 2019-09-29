@@ -15,4 +15,10 @@ export class BaseLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(){
+    console.log("inside logout()!!!!");
+    this.cookieService.delete('isAuthenticated');
+    this.router.navigate(['/session/login']);
+  }
+
 }
