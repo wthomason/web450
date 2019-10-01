@@ -1,0 +1,139 @@
+{
+    'id': '1001',
+    'quizName: 'JSON',
+    'cumulativeScore': 0,
+    'questions': [
+        {
+         'questionId': '1',
+         'questionAsked': 'What does JSON stand for?',
+         'answers': [
+             'Javascript Oreintation Nomination','Java Standard of Nominclature','Javascript Object Notation','None of the above'
+         ],
+         'questionAnswer': 'Javascript Object Notation'
+        },
+        {
+         'questionId': '2',
+         'questionAsked': 'What are JSON API's used for?',
+         'answers': [
+             'exchanging data between a browser and a server','Save Cookie in the Browser','Transform HTML','Both A & B'
+         ],
+         'questionAnswer': 'exchanging data between a browser and a server'
+        },
+        {
+         'questionId': '3',
+         'questionAsked': 'What should you convert JSON too that is recieved from the server?',
+         'answers': [
+             'Strings','Arrays','HTMl','JavaScript Objects'
+         ],
+         'questionAnswer': 'JavaScript objects'
+        },
+        {
+         'questionId': '4',
+         'questionAsked': 'JSON request headers allow the client and the server to pass what?',
+         'answers': [
+             'additional information with the request or the response','Weather Information','Infromation about the resource','Both A and B'
+         ],
+         'questionAnswer': 'Both A and B'
+        },
+        {
+         'questionId': '5',
+         'questionAsked': 'What does the JSON Request Body contain?',
+         'answers': [
+             'data from the server to the database','Javascript Objects','CSS','data the client wants to send the server'
+         ],
+         'questionAnswer': 'data the client wants to send the server'
+        },
+        {
+         'questionId': '6',
+         'questionAsked': 'Are JSON request body optional?',
+         'answers': [
+             'Yes','No','Sometimes','Who Knows!'
+         ],
+         'questionAnswer': 'Yes'
+        },
+        {
+         'questionId': '7',
+         'questionAsked': 'A response is defined by data returned in the response body, headers and what?',
+         'answers': [
+             'Title','HTTP status code ','IP Address','None of the above'
+         ],
+         'questionAnswer': 'HTTP status code '
+        },
+        {
+         'questionId': '8',
+         'questionAsked': 'What is currently the most common format for data exchange?',
+         'answers': [
+             'CSS','XML','HTML','JSON'
+         ],
+         'questionAnswer': 'JSON'
+        },
+        {
+         'questionId': '9',
+         'questionAsked': 'Where does the data in a response and request?',
+         'answers': [
+             'Header','Status Code','Body','None of the Above'
+         ],
+         'questionAnswer': 'Body'
+        },
+        {
+         'questionId': '10',
+         'questionAsked': 'Inside the JSON request, what is used to describe the response body?',
+         'answers': [
+             'Strings','Schema Keyword ','Data','Both A & B'
+         ],
+         'questionAnswer': 'Schema Keyword '
+        }
+    ],
+    presentation[
+        {
+            'id': '1'
+            'name': 'Slide 1',
+            'path': ''
+        },
+        {
+            'id': '2'
+            'name': 'Slide 2',
+            'path': ''
+        },
+        {
+            'id': '3'
+            'name': 'Slide 3',
+            'path': ''
+        },
+        {
+            'id': '4'
+            'name': 'Slide 4',
+            'path': ''
+        },
+        {
+            'id': '5'
+            'name': 'Slide 5',
+            'path': ''
+        },
+        {
+            'id': '6'
+            'name': 'Slide 6',
+            'path': ''
+        },
+        {
+            'id': '7'
+            'name': 'Slide 7',
+            'path': ''
+        },
+        {
+            'id': '8'
+            'name': 'Slide 8',
+            'path': ''
+        },
+        {
+            'id': '9'
+            'name': 'Slide 9',
+            'path': ''
+        },
+        {
+            'id': '10'
+            'name': 'Slide 10',
+            'path': ''
+        }
+    ]
+}
