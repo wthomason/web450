@@ -34,6 +34,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
+import { CarouselModule } from 'primeng/carousel';
+import { PresentationComponent } from './pages/presentation/presentation.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
 
 
 @NgModule({
@@ -44,7 +47,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     DashboardComponent,
     LoginComponent,
     NotFoundComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    PresentationComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatIconModule,
     MatMenuModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
