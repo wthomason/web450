@@ -10,10 +10,10 @@
 const mongoose = require('mongoose');
 
 let quizSchema = mongoose.Schema({
-  quizId: Number,
+  quizId: String,
   quizName: String,
   quizDescription: String,
-  cumulativeScore: Number
+  cumulativeScore: String
 });
 
 module.exports = mongoose.model('Quiz', quizSchema);
