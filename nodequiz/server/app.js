@@ -14,6 +14,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const Employee = require('./db-models/employee');
+const Quiz = require('./db-models/quiz');
 
 let app = express();
 
@@ -38,6 +39,8 @@ mongoose.connect(connString, {promiseLibrary:require('bluebird'), useNewUrlParse
 
 /************************* API routes go below this line ********************/
 
+
+/********************** Employee API Routes ********************************/
 app.post('/api/employees', function(req, res, next) {
   const employee = {
     employeeId: req.body.employeeId,
@@ -64,6 +67,54 @@ app.get('/api/employees/:id', function(req, res, next) {
     }  else {
       console.log(employee);
       res.json(employee);
+    }
+  })
+});
+
+/********************** Quiz API Routes ********************************/
+
+//Create Quiz
+app.post('/api/quizzes', function(req, res, next) {
+  const quiz = {
+    quizId: req.body.employeeId,
+    quizName: req.body.quizName,
+    quizDescription: req.body.quizDescription,
+    cumulativeScore: req.body.cumulativeScore
+  };
+
+  Quiz.create(quiz, function(err, quizzes) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(quizzes);
+      res.json(quizzes);
+    }
+  });
+});
+
+//Get all Quizzes
+app.get('/api/quizzes/all', function(req, res, next) {
+  Quiz.find(function(err, quizzes) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }  else {
+      console.log(quizzes);
+      res.json(quizzes);
+    }
+  })
+});
+
+//Get Quiz by Id
+app.get('/api/quizzes/:id', function(req, res, next) {
+  Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }  else {
+      console.log(quiz);
+      res.json(quiz);
     }
   })
 });

@@ -1,88 +1,89 @@
 {
-    'id': 1002,
-    'quizName: 'JSON',
-    'quizDescription': '',
+    'quizId': 1002,
+    'quizName': 'Security Controls in Shared Source Code Repositories',
+    'quizDescription': 'This presentation and quiz will test you knowledge of Security Controls in Shared Source Code Repositories',
     'cumulativeScore': 0,
     'questions': [
         {
          'questionId': 1,
-         'questionAsked': 'What does JSON stand for?',
+         'questionAsked': '______, or breach of the underlying service, may allow attackers to modify your code base without your knowledge or permission.
+',
          'answers': [
-             'Javascript Oreintation Nomination','Java Standard of Nominclature','Javascript Object Notation','None of the above'
+             'Loss or compromise of access credentials','NoSQL Server','GIT Repositories','None of the Above'
          ],
-         'questionAnswer': 'Javascript Object Notation'
+         'questionAnswer': 'Loss or compromise of access credentials'
         },
         {
          'questionId': 2,
-         'questionAsked': 'What are JSON API's used for?',
+         'questionAsked': 'What are some of the advantages which come with using a code repository?',
          'answers': [
-             'exchanging data between a browser and a server','Save Cookie in the Browser','Transform HTML','Both A & B'
+             'Version control','peer review','built-in auditing','All of the Above'
          ],
-         'questionAnswer': 'exchanging data between a browser and a server'
+         'questionAnswer': 'All of the Above'
         },
         {
          'questionId': 3,
-         'questionAsked': 'What should you convert JSON too that is recieved from the server?',
+         'questionAsked': 'What are some actions that can be taken to ensure security?',
          'answers': [
-             'Strings','Arrays','HTMl','JavaScript Objects'
+             'Choose a repository you trust','Protect access credentials','Don't use Repositories','Both A & B'
          ],
-         'questionAnswer': 'JavaScript objects'
+         'questionAnswer': 'Both A & B'
         },
         {
          'questionId': 4,
-         'questionAsked': 'JSON request headers allow the client and the server to pass what?',
+         'questionAsked': 'What are some things to consider when making a repository?',
          'answers': [
-             'additional information with the request or the response','Weather Information','Infromation about the resource','Both A and B'
+             'Consider the exposure of your repository','Separate secret credentials from source code','Review all code changes','All of the Above'
          ],
-         'questionAnswer': 'Both A and B'
+         'questionAnswer': 'All of the Above'
         },
         {
          'questionId': 5,
-         'questionAsked': 'What does the JSON Request Body contain?',
+         'questionAsked': 'What was the tool mentioned in the presentation to help protect credentials in git Repositories?',
          'answers': [
-             'data from the server to the database','Javascript Objects','CSS','data the client wants to send the server'
+             'git-secrets','Never-secret','secret-stash','None of the Above'
          ],
-         'questionAnswer': 'data the client wants to send the server'
+         'questionAnswer': 'git-secrets'
         },
         {
          'questionId': 6,
-         'questionAsked': 'Are JSON request body optional?',
+         'questionAsked': 'Which of the following should be considered with access control?',
          'answers': [
-             'Yes','No','Sometimes','Who Knows!'
+             'Have users write down the password','Don't give out credentials','Require 2-factor-authentication','None of the Above'
          ],
-         'questionAnswer': 'Yes'
+         'questionAnswer': 'Require 2-factor-authentication'
         },
         {
          'questionId': 7,
-         'questionAsked': 'A response is defined by data returned in the response body, headers and what?',
+         'questionAsked': 'What type of file should be added to a repository to help with security?',
          'answers': [
-             'Title','HTTP status code ','IP Address','None of the above'
+             'AUTHGUARD.MD','SAFE.MD','SECURITY.MD','None of the Above'
          ],
-         'questionAnswer': 'HTTP status code '
+         'questionAnswer': 'SECURITY.MD'
         },
         {
          'questionId': 8,
-         'questionAsked': 'What is currently the most common format for data exchange?',
+         'questionAsked': 'Which of the following should be included in a SECURITY.MD file?',
          'answers': [
-             'CSS','XML','HTML','JSON'
+             'Disclosure policy','Security Update policy','Security related configuration','All of the above'
          ],
-         'questionAnswer': 'JSON'
+         'questionAnswer': 'All of the above'
         },
         {
          'questionId': 9,
-         'questionAsked': 'Where does the data in a response and request?',
+         'questionAsked': 'GitHub has a powerful ______ Git Hook framework.',
          'answers': [
-             'Header','Status Code','Body','None of the Above'
+            'commit','event driven','change','None of the Above'
          ],
-         'questionAnswer': 'Body'
+         'questionAnswer': 'event driven'
         },
         {
          'questionId': 10,
-         'questionAsked': 'Inside the JSON request, what is used to describe the response body?',
+         'questionAsked': 'Use pre-commit ______ to ensure you’re not trying to push any passwords or sensitive information into your GitHub repository.',
          'answers': [
-             'Strings','Schema Keyword ','Data','Both A & B'
+            'Security path','Git Hook','Git Loop','Non of the Above'
          ],
-         'questionAnswer': 'Schema Keyword '
+         'questionAnswer': 'Git Hook'
         }
     ],
     presentation[

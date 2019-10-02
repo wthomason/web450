@@ -1,88 +1,89 @@
 {
-    'id': 1003,
-    'quizName: 'JSON',
-    'quizDescription': '',
+    'quizId': 1003,
+    'quizName': 'Microservices',
+    'quizDescription': 'This presentation and quiz will test your undserstanding of what microservices are and how they are used.',
     'cumulativeScore': 0,
     'questions': [
         {
          'questionId': 1,
-         'questionAsked': 'What does JSON stand for?',
+         'questionAsked': 'What are positive aspects of using microservices?',
          'answers': [
-             'Javascript Oreintation Nomination','Java Standard of Nominclature','Javascript Object Notation','None of the above'
+             'Highly maintainable and testable','Loosely coupled','Independently deployable','All of the above'
          ],
-         'questionAnswer': 'Javascript Object Notation'
+         'questionAnswer': 'All of the above'
         },
         {
          'questionId': 2,
-         'questionAsked': 'What are JSON API's used for?',
+         'questionAsked': '_______ is an architectural style that structures an application as a collection of services?',
          'answers': [
-             'exchanging data between a browser and a server','Save Cookie in the Browser','Transform HTML','Both A & B'
+             'Web service architecture','Service Oriented Architecture','Microservice architecture','None of the Above'
          ],
-         'questionAnswer': 'exchanging data between a browser and a server'
+         'questionAnswer': 'Microservice architecture '
         },
         {
          'questionId': 3,
-         'questionAsked': 'What should you convert JSON too that is recieved from the server?',
+         'questionAsked': '_______ is programming that sits in front of an application programming interface (API) and acts as a single point of entry for a defined group of microservices.',
          'answers': [
-             'Strings','Arrays','HTMl','JavaScript Objects'
+             'API gateway','API Doorway','JSON Request','None of the Above'
          ],
-         'questionAnswer': 'JavaScript objects'
+         'questionAnswer': 'API gateway '
         },
         {
          'questionId': 4,
-         'questionAsked': 'JSON request headers allow the client and the server to pass what?',
+         'questionAsked': 'Pick on of the disadvantages of Microservices',
          'answers': [
-             'additional information with the request or the response','Weather Information','Infromation about the resource','Both A and B'
+             'Multiple databases involved','Skilled developers needed','Making remote calls is complex','All of the Above'
          ],
-         'questionAnswer': 'Both A and B'
+         'questionAnswer': 'All of the Above'
         },
         {
          'questionId': 5,
-         'questionAsked': 'What does the JSON Request Body contain?',
+         'questionAsked': 'How are Microservices deployed and mangaged',
          'answers': [
-             'data from the server to the database','Javascript Objects','CSS','data the client wants to send the server'
+             'Multiple service instance per host','Single Service instance per host','Service instance per VM','All of the Above'
          ],
-         'questionAnswer': 'data the client wants to send the server'
+         'questionAnswer': 'All of the Above'
         },
         {
          'questionId': 6,
-         'questionAsked': 'Are JSON request body optional?',
+         'questionAsked': 'What is a major benefit of using API gateways?',
          'answers': [
-             'Yes','No','Sometimes','Who Knows!'
+             'Helps developers structure their data','Keeps Code Organized','Allows developers to encapsulate the internal structure of an application in multiple ways','Both A & B'
          ],
-         'questionAnswer': 'Yes'
+         'questionAnswer': 'Allows developers to encapsulate the internal structure of an application in multiple ways'
         },
         {
          'questionId': 7,
-         'questionAsked': 'A response is defined by data returned in the response body, headers and what?',
+         'questionAsked': 'Modules (Microservice) in the system can be written in what computer language?',
          'answers': [
-             'Title','HTTP status code ','IP Address','None of the above'
+             'PHP','Java','Any','HTML'
          ],
-         'questionAnswer': 'HTTP status code '
+         'questionAnswer': 'Any'
         },
         {
          'questionId': 8,
-         'questionAsked': 'What is currently the most common format for data exchange?',
+         'questionAsked': '______ system is testing done on the system as a whole?',
          'answers': [
-             'CSS','XML','HTML','JSON'
+             'Gateway','Monolithic','Microservice','None of the Above'
          ],
-         'questionAnswer': 'JSON'
+         'questionAnswer': 'Monolithic'
         },
         {
          'questionId': 9,
-         'questionAsked': 'Where does the data in a response and request?',
+         'questionAsked': '_______, testing is done on all the services and then checking all the individual services for any update is time-consuming.
+',
          'answers': [
-             'Header','Status Code','Body','None of the Above'
+            'Gateway','Monolithic','Microservices','None of the Above'
          ],
-         'questionAnswer': 'Body'
+         'questionAnswer': 'Microservices'
         },
         {
          'questionId': 10,
-         'questionAsked': 'Inside the JSON request, what is used to describe the response body?',
+         'questionAsked': '________ enables the continuous delivery/deployment of large, complex applications. It also enables an organization to evolve its technology stack.',
          'answers': [
-             'Strings','Schema Keyword ','Data','Both A & B'
+            'Gateway Architecture','Monolithic Architecture','Microservice Architecture','None of the Above'
          ],
-         'questionAnswer': 'Schema Keyword '
+         'questionAnswer': 'Microservice Architecture'
         }
     ],
     presentation[

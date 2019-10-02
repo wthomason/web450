@@ -1,7 +1,7 @@
 {
-    'id': 1001,
-    'quizName: 'JSON',
-    'quizDescription': '',
+    'quizId': 1001,
+    'quizName': 'JSON',
+    'quizDescription': 'This Quiz will give you a good understanding of what JSON is as well as JSON request & responses.',
     'cumulativeScore': 0,
     'questions': [
         {
