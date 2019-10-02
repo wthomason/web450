@@ -1,10 +1,11 @@
 {
-    'id': '1001',
+    'id': 1001,
     'quizName: 'JSON',
+    'quizDescription': '',
     'cumulativeScore': 0,
     'questions': [
         {
-         'questionId': '1',
+         'questionId': 1,
          'questionAsked': 'What does JSON stand for?',
          'answers': [
              'Javascript Oreintation Nomination','Java Standard of Nominclature','Javascript Object Notation','None of the above'
@@ -12,7 +13,7 @@
          'questionAnswer': 'Javascript Object Notation'
         },
         {
-         'questionId': '2',
+         'questionId': 2,
          'questionAsked': 'What are JSON API's used for?',
          'answers': [
              'exchanging data between a browser and a server','Save Cookie in the Browser','Transform HTML','Both A & B'
@@ -20,7 +21,7 @@
          'questionAnswer': 'exchanging data between a browser and a server'
         },
         {
-         'questionId': '3',
+         'questionId': 3,
          'questionAsked': 'What should you convert JSON too that is recieved from the server?',
          'answers': [
              'Strings','Arrays','HTMl','JavaScript Objects'
@@ -28,7 +29,7 @@
          'questionAnswer': 'JavaScript objects'
         },
         {
-         'questionId': '4',
+         'questionId': 4,
          'questionAsked': 'JSON request headers allow the client and the server to pass what?',
          'answers': [
              'additional information with the request or the response','Weather Information','Infromation about the resource','Both A and B'
@@ -36,7 +37,7 @@
          'questionAnswer': 'Both A and B'
         },
         {
-         'questionId': '5',
+         'questionId': 5,
          'questionAsked': 'What does the JSON Request Body contain?',
          'answers': [
              'data from the server to the database','Javascript Objects','CSS','data the client wants to send the server'
@@ -44,7 +45,7 @@
          'questionAnswer': 'data the client wants to send the server'
         },
         {
-         'questionId': '6',
+         'questionId': 6,
          'questionAsked': 'Are JSON request body optional?',
          'answers': [
              'Yes','No','Sometimes','Who Knows!'
@@ -52,7 +53,7 @@
          'questionAnswer': 'Yes'
         },
         {
-         'questionId': '7',
+         'questionId': 7,
          'questionAsked': 'A response is defined by data returned in the response body, headers and what?',
          'answers': [
              'Title','HTTP status code ','IP Address','None of the above'
@@ -60,7 +61,7 @@
          'questionAnswer': 'HTTP status code '
         },
         {
-         'questionId': '8',
+         'questionId': 8,
          'questionAsked': 'What is currently the most common format for data exchange?',
          'answers': [
              'CSS','XML','HTML','JSON'
@@ -68,7 +69,7 @@
          'questionAnswer': 'JSON'
         },
         {
-         'questionId': '9',
+         'questionId': 9,
          'questionAsked': 'Where does the data in a response and request?',
          'answers': [
              'Header','Status Code','Body','None of the Above'
@@ -76,7 +77,7 @@
          'questionAnswer': 'Body'
         },
         {
-         'questionId': '10',
+         'questionId': 10,
          'questionAsked': 'Inside the JSON request, what is used to describe the response body?',
          'answers': [
              'Strings','Schema Keyword ','Data','Both A & B'
@@ -86,52 +87,52 @@
     ],
     presentation[
         {
-            'id': '1',
+            'id': 1,
             'name': 'Slide 1',
             'path': '1.JPG'
         },
         {
-            'id': '2',
+            'id': 2,
             'name': 'Slide 2',
             'path': '2.JPG'
         },
         {
-            'id': '3',
+            'id': 3,
             'name': 'Slide 3',
             'path': '3.JPG'
         },
         {
-            'id': '4',
+            'id': 4,
             'name': 'Slide 4',
             'path': '4.JPG'
         },
         {
-            'id': '5',
+            'id': 5,
             'name': 'Slide 5',
             'path': '5.JPG'
         },
         {
-            'id': '6',
+            'id': 6,
             'name': 'Slide 6',
             'path': '6.JPG'
         },
         {
-            'id': '7',
+            'id': ',
             'name': 'Slide 7',
             'path': '7.JPG'
         },
         {
-            'id': '8',
+            'id': 8,
             'name': 'Slide 8',
             'path': '8.JPG'
         },
         {
-            'id': '9',
+            'id': 9,
             'name': 'Slide 9',
             'path': '9.JPG'
         },
         {
-            'id': '10',
+            'id': 10,
             'name': 'Slide 10',
             'path': '10.JPG'
         }
