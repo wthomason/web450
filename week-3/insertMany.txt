@@ -1,4 +1,4 @@
- db.quizzes.insertMany([
+db.quizzes.insertMany([
     {
     'quizId': '1001',
     'quizName': 'JSON',
@@ -219,7 +219,7 @@
         },
         {
          'questionId': '10',
-         'questionAsked': 'Use pre-commit ______ to ensure you’re not trying to push any passwords or sensitive information into your GitHub repository.',
+         'questionAsked': 'Use pre-commit ______ to ensure you’re not trying to push any passwords or sensitive information into your GitHub repository.',
          'answers': [
             'Security path','Git Hook','Git Loop','Non of the Above'
          ],
@@ -440,5 +440,3 @@
     ]
 }
 ])  
-
- 

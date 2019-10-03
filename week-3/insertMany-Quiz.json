@@ -1,0 +1,442 @@
+ [    
+    {
+        "quizId": "1001",
+        "quizName": "JSON",
+        "quizDescription": "This Quiz will give you a good understanding of what JSON is as well as JSON request & responses.",
+        "cumulativeScore": "0",
+        "questions": [
+            {
+            "questionId": "1",
+            "questionAsked": "What does JSON stand for?",
+            "answers": [
+                "Javascript Oreintation Nomination","Java Standard of Nominclature","Javascript Object Notation","None of the above"
+            ],
+            "questionAnswer": "Javascript Object Notation"
+            },
+            {
+            "questionId": "2",
+            "questionAsked": "What are JSON APIs used for?",
+            "answers": [
+                "exchanging data between a browser and a server","Save Cookie in the Browser","Transform HTML","Both A & B"
+            ],
+            "questionAnswer": "exchanging data between a browser and a server"
+            },
+            {
+            "questionId": "3",
+            "questionAsked": "What should you convert JSON too that is recieved from the server?",
+            "answers": [
+                "Strings","Arrays","HTMl","JavaScript Objects"
+            ],
+            "questionAnswer": "JavaScript objects"
+            },
+            {
+            "questionId": "4",
+            "questionAsked": "JSON request headers allow the client and the server to pass what?",
+            "answers": [
+                "additional information with the request or the response","Weather Information","Infromation about the resource","Both A and B"
+            ],
+            "questionAnswer": "Both A and B"
+            },
+            {
+            "questionId": "5",
+            "questionAsked": "What does the JSON Request Body contain?",
+            "answers": [
+                "data from the server to the database","Javascript Objects","CSS","data the client wants to send the server"
+            ],
+            "questionAnswer": "data the client wants to send the server"
+            },
+            {
+            "questionId": "6",
+            "questionAsked": "Are JSON request body optional?",
+            "answers": [
+                "Yes","No","Sometimes","Who Knows!"
+            ],
+            "questionAnswer": "Yes"
+            },
+            {
+            "questionId": "7",
+            "questionAsked": "A response is defined by data returned in the response body, headers and what?",
+            "answers": [
+                "Title","HTTP status code ","IP Address","None of the above"
+            ],
+            "questionAnswer": "HTTP status code "
+            },
+            {
+            "questionId": "8",
+            "questionAsked": "What is currently the most common format for data exchange?",
+            "answers": [
+                "CSS","XML","HTML","JSON"
+            ],
+            "questionAnswer": "JSON"
+            },
+            {
+            "questionId": "9",
+            "questionAsked": "Where does the data in a response and request?",
+            "answers": [
+                "Header","Status Code","Body","None of the Above"
+            ],
+            "questionAnswer": "Body"
+            },
+            {
+            "questionId": "10",
+            "questionAsked": "Inside the JSON request, what is used to describe the response body?",
+            "answers": [
+                "Strings","Schema Keyword ","Data","Both A & B"
+            ],
+            "questionAnswer": "Schema Keyword "
+            }
+        ],
+        "presentation": [
+            {
+                "ImageId": "1",
+                "imageName": "Slide 1",
+                "imagePath": "1.JPG"
+            },
+            {
+                "ImageId": "2",
+                "imageName": "Slide 2",
+                "imagePath": "2.JPG"
+            },
+            {
+                "ImageId": "3",
+                "imageName": "Slide 3",
+                "imagePath": "3.JPG"
+            },
+            {
+                "ImageId": "4",
+                "imageName": "Slide 4",
+                "imagePath": "4.JPG"
+            },
+            {
+                "ImageId": "5",
+                "imageName": "Slide 5",
+                "imagePath": "5.JPG"
+            },
+            {
+                "ImageId": "6",
+                "imageName": "Slide 6",
+                "imagePath": "6.JPG"
+            },
+            {
+                "ImageId": "7",
+                "imageName": "Slide 7",
+                "imagePath": "7.JPG"
+            },
+            {
+                "ImageId": "8",
+                "imageName": "Slide 8",
+                "imagePath": "8.JPG"
+            },
+            {
+                "ImageId": "9",
+                "imageName": "Slide 9",
+                "imagePath": "9.JPG"
+            },
+            {
+                "ImageId": "10",
+                "imageName": "Slide 10",
+                "imagePath": "10.JPG"
+            }
+        ]
+    },
+    {
+        "quizId": "1002",
+        "quizName": "Security Controls in Shared Source Code Repositories",
+        "quizDescription": "This presentation and quiz will test you knowledge of Security Controls in Shared Source Code Repositories",
+        "cumulativeScore": "0",
+        "questions": [
+            {
+            "questionId": "1",
+            "questionAsked": "______, or breach of the underlying service, may allow attackers to modify your code base without your knowledge or permission.",
+            "answers": [
+                "Loss or compromise of access credentials","NoSQL Server","GIT Repositories","None of the Above"
+            ],
+            "questionAnswer": "Loss or compromise of access credentials"
+            },
+            {
+            "questionId": "2",
+            "questionAsked": "What are some of the advantages which come with using a code repository?",
+            "answers": [
+                "Version control","peer review","built-in auditing","All of the Above"
+            ],
+            "questionAnswer": "All of the Above"
+            },
+            {
+            "questionId": "3",
+            "questionAsked": "What are some actions that can be taken to ensure security?",
+            "answers": [
+                "Choose a repository you trust","Protect access credentials","Don't use Repositories","Both A & B"
+            ],
+            "questionAnswer": "Both A & B"
+            },
+            {
+            "questionId": "4",
+            "questionAsked": "What are some things to consider when making a repository?",
+            "answers": [
+                "Consider the exposure of your repository","Separate secret credentials from source code","Review all code changes","All of the Above"
+            ],
+            "questionAnswer": "All of the Above"
+            },
+            {
+            "questionId": "5",
+            "questionAsked": "What was the tool mentioned in the presentation to help protect credentials in git Repositories?",
+            "answers": [
+                "git-secrets","Never-secret","secret-stash","None of the Above"
+            ],
+            "questionAnswer": "git-secrets"
+            },
+            {
+            "questionId": "6",
+            "questionAsked": "Which of the following should be considered with access control?",
+            "answers": [
+                "Have users write down the password","Don't give out credentials","Require 2-factor-authentication","None of the Above"
+            ],
+            "questionAnswer": "Require 2-factor-authentication"
+            },
+            {
+            "questionId": "7",
+            "questionAsked": "What type of file should be added to a repository to help with security?",
+            "answers": [
+                "AUTHGUARD.MD","SAFE.MD","SECURITY.MD","None of the Above"
+            ],
+            "questionAnswer": "SECURITY.MD"
+            },
+            {
+            "questionId": "8",
+            "questionAsked": "Which of the following should be included in a SECURITY.MD file?",
+            "answers": [
+                "Disclosure policy","Security Update policy","Security related configuration","All of the above"
+            ],
+            "questionAnswer": "All of the above"
+            },
+            {
+            "questionId": "9",
+            "questionAsked": "GitHub has a powerful ______ Git Hook framework.",
+            "answers": [
+                "commit","event driven","change","None of the Above"
+            ],
+            "questionAnswer": "event driven"
+            },
+            {
+            "questionId": "10",
+            "questionAsked": "Use pre-commit ______ to ensure you’re not trying to push any passwords or sensitive information into your GitHub repository.",
+            "answers": [
+                "Security path","Git Hook","Git Loop","Non of the Above"
+            ],
+            "questionAnswer": "Git Hook"
+            }
+        ],
+        "presentation": [
+            {
+                "ImageId": "1",
+                "imageName": "Slide 1",
+                "imagePath": "1.JPG"
+            },
+            {
+                "ImageId": "2",
+                "imageName": "Slide 2",
+                "imagePath": "2.JPG"
+            },
+            {
+                "ImageId": "3",
+                "imageName": "Slide 3",
+                "imagePath": "3.JPG"
+            },
+            {
+                "ImageId": "4",
+                "imageName": "Slide 4",
+                "imagePath": "4.JPG"
+            },
+            {
+                "ImageId": "5",
+                "imageName": "Slide 5",
+                "imagePath": "5.JPG"
+            },
+            {
+                "ImageId": "6",
+                "imageName": "Slide 6",
+                "imagePath": "6.JPG"
+            },
+            {
+                "ImageId": "7",
+                "imageName": "Slide 7",
+                "imagePath": "7.JPG"
+            },
+            {
+                "ImageId": "8",
+                "imageName": "Slide 8",
+                "imagePath": "8.JPG"
+            },
+            {
+                "ImageId": "9",
+                "imageName": "Slide 9",
+                "imagePath": "9.JPG"
+            },
+            {
+                "ImageId": "10",
+                "imageName": "Slide 10",
+                "imagePath": "10.JPG"
+            }
+        ]
+    },
+    {
+        "quizId": "1003",
+        "quizName": "Microservices",
+        "quizDescription": "This presentation and quiz will test your undserstanding of what microservices are and how they are used.",
+        "cumulativeScore": 0,
+        "questions": [
+            {
+            "questionId": "1",
+            "questionAsked": "What are positive aspects of using microservices?",
+            "answers": [
+                "Highly maintainable and testable","Loosely coupled","Independently deployable","All of the above"
+            ],
+            "questionAnswer": "All of the above"
+            },
+            {
+            "questionId": "2",
+            "questionAsked": "_______ is an architectural style that structures an application as a collection of services?",
+            "answers": [
+                "Web service architecture","Service Oriented Architecture","Microservice architecture","None of the Above"
+            ],
+            "questionAnswer": "Microservice architecture "
+            },
+            {
+            "questionId": "3",
+            "questionAsked": "_______ is programming that sits in front of an application programming interface API and acts as a single point of entry for a defined group of microservices.",
+            "answers": [
+                "API gateway","API Doorway","JSON Request","None of the Above"
+            ],
+            "questionAnswer": "API gateway "
+            },
+            {
+            "questionId": "4",
+            "questionAsked": "Pick on of the disadvantages of Microservices",
+            "answers": [
+                "Multiple databases involved","Skilled developers needed","Making remote calls is complex","All of the Above"
+            ],
+            "questionAnswer": "All of the Above"
+            },
+            {
+            "questionId": "5",
+            "questionAsked": "How are Microservices deployed and mangaged",
+            "answers": [
+                "Multiple service instance per host","Single Service instance per host","Service instance per VM","All of the Above"
+            ],
+            "questionAnswer": "All of the Above"
+            },
+            {
+            "questionId": "6",
+            "questionAsked": "What is a major benefit of using API gateways?",
+            "answers": [
+                "Helps developers structure their data","Keeps Code Organized","Allows developers to encapsulate the internal structure of an application in multiple ways","Both A & B"
+            ],
+            "questionAnswer": "Allows developers to encapsulate the internal structure of an application in multiple ways"
+            },
+            {
+            "questionId": "7",
+            "questionAsked": "Modules or Microservice in the system can be written in what computer language?",
+            "answers": [
+                "PHP","Java","Any","HTML"
+            ],
+            "questionAnswer": "Any"
+            },
+            {
+            "questionId": "8",
+            "questionAsked": "______ system is testing done on the system as a whole?",
+            "answers": [
+                "Gateway","Monolithic","Microservice","None of the Above"
+            ],
+            "questionAnswer": "Monolithic"
+            },
+            {
+            "questionId": "9",
+            "questionAsked": "_______, testing is done on all the services and then checking all the individual services for any update is time-consuming.",
+            "answers": [
+                "Gateway","Monolithic","Microservices","None of the Above"
+            ],
+            "questionAnswer": "Microservices"
+            },
+            {
+            "questionId": "10",
+            "questionAsked": "________ enables the continuous delivery/deployment of large, complex applications. It also enables an organization to evolve its technology stack.",
+            "answers": [
+                "Gateway Architecture","Monolithic Architecture","Microservice Architecture","None of the Above"
+            ],
+            "questionAnswer": "Microservice Architecture"
+            }
+        ],
+        "presentation": [
+            {
+                "ImageId": "1",
+                "imageName": "Slide 1",
+                "imagePath": "1.JPG"
+            },
+            {
+                "ImageId": "2",
+                "imageName": "Slide 2",
+                "imagePath": "2.JPG"
+            },
+            {
+                "ImageId": "3",
+                "imageName": "Slide 3",
+                "imagePath": "3.JPG"
+            },
+            {
+                "ImageId": "4",
+                "imageName": "Slide 4",
+                "imagePath": "4.JPG"
+            },
+            {
+                "ImageId": "5",
+                "imageName": "Slide 5",
+                "imagePath": "5.JPG"
+            },
+            {
+                "ImageId":"6",
+                "imageName": "Slide 6",
+                "imagePath": "6.JPG"
+            },
+            {
+                "ImageId": "7",
+                "imageName": "Slide 7",
+                "imagePath": "7.JPG"
+            },
+            {
+                "ImageId": "8",
+                "imageName": "Slide 8",
+                "imagePath": "8.JPG"
+            },
+            {
+                "ImageId": "9",
+                "imageName": "Slide 9",
+                "imagePath": "9.JPG"
+            },
+            {
+                "ImageId": "10",
+                "imageName": "Slide 10",
+                "imagePath": "10.JPG"
+            },
+            {
+                "ImageId": "11",
+                "imageName": "Slide 11",
+                "imagePath": "11.JPG"
+            },
+            {
+                "ImageId": "12",
+                "imageName": "Slide 12",
+                "imagePath": "12.JPG"
+            },
+            {
+                "ImageId": "13",
+                "imageName": "Slide 13",
+                "imagePath": "13.JPG"
+            },
+            {
+                "ImageId": "14",
+                "imageName": "Slide 14",
+                "imagePath": "14.JPG"
+            }
+        ]
+    }
+]
