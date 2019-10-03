@@ -21,7 +21,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  errorMessage: string;
+  errorMessage: string; 
 
   constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) { }
 

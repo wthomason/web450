@@ -283,7 +283,7 @@
         "quizId": "1003",
         "quizName": "Microservices",
         "quizDescription": "This presentation and quiz will test your undserstanding of what microservices are and how they are used.",
-        "cumulativeScore": 0,
+        "cumulativeScore": "0",
         "questions": [
             {
             "questionId": "1",

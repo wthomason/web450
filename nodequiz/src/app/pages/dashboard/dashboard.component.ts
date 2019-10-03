@@ -8,6 +8,9 @@
 */
 
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,9 +19,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient) { }
+  errorMessage: string;
+  quizzes: any;
 
   ngOnInit() {
+    
+  this.http.get('/api/quizzes/all').subscribe(res => {
+    if (res) {
+      return this.quizzes = res;      
+    } else {
+      return this.errorMessage = "OH NO, there were no quizes were found!!!";
+    }
+  })
+
+  }//end of ngOnInit
+
+  presentationPage(id){
+    this.router.navigateByUrl('/dashboard/presentation/' + id);
   }
+
+  
 
 }
