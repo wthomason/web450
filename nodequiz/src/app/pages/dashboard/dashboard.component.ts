@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
     if (res) {
       return this.quizzes = res;      
     } else {
-      return this.errorMessage = "OH NO, there were no quizes were found!!!";
+      return this.errorMessage = "OH NO, there were no quizzes were found!!!";
     }
   })
 

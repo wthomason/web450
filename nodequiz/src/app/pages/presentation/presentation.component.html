@@ -1,1 +1,5 @@
-<p>presentation works!</p>
+
+<h1>Quiz ID: {{urlParamId}}</h1>
+<small *ngIf="errorMessage">{{ errorMessage }}<br/></small>
+<br><br>
+<h2>{{quiz.quizName}}</h2>
