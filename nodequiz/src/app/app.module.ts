@@ -17,14 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BaseLayoutComponent } from './shared';
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { CumulativeSummaryComponent } from './pages/cumulative-summary/cumulative-summary.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PresentationComponent } from './pages/presentation/presentation.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from './shared/guards/auth-guard';
+import { CookieService } from 'ngx-cookie-service';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,8 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { CarouselModule } from 'primeng/carousel';
-import { PresentationComponent } from './pages/presentation/presentation.component';
-import { QuizComponent } from './pages/quiz/quiz.component';
+
 
 
 @NgModule({
