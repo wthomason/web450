@@ -32,6 +32,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -62,6 +64,8 @@ import { CarouselModule } from 'primeng/carousel';
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatRadioModule,
+    MatButtonToggleModule,
     MatInputModule,
     MatIconModule,
     MatMenuModule,

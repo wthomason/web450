@@ -1,1 +1,43 @@
-<p>quiz works!</p>
+
+
+ <div style="width: 50%; margin-top: 2%; margin-left: 20%;" fxLayout="column">
+  <mat-card class="mat-elevation-z8">
+      <mat-card-title style="text-align:center"><h1>{{quiz.quizName}}</h1></mat-card-title>
+      <mat-card-content>
+          <form [formGroup]="form" (ngSubmit)="login(); form.reset();" #loginForm>
+              <mat-card style="width: 80%; margin: 0 auto;">
+                  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+
+                      <small *ngIf="errorMessage">{{ errorMessage }}<br/></small>
+
+                      <ol>
+                        <li *ngFor="let question of quiz.questions">
+                          {{ question.questionAsked }}
+                          <br><br>
+
+
+                          <mat-radio-group aria-label="Select an option">
+
+                            <mat-radio-button class="quiz-radio-group" *ngFor="let questionAnswers of question.answers" value="questionAnswers">{{ questionAnswers }} <br></mat-radio-button>
+
+                          </mat-radio-group>
+
+                           <br><br>
+                        </li>
+                       </ol>
+
+
+
+                  </mat-card-content>
+
+                  <mat-card-actions style="width: 50%; text-align:left">
+                      <button fxFlex mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Submit</button>
+                  </mat-card-actions>
+
+              </mat-card>
+          </form>
+          <br /><br />
+          <button mat-fab color="warn" (click)="backPage()">Back</button>
+      </mat-card-content>
+  </mat-card>
+</div>

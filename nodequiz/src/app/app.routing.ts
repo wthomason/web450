@@ -12,6 +12,7 @@ import {BaseLayoutComponent} from './shared';
 import {AuthLayoutComponent} from './shared/auth-layout/auth-layout.component';
 import {AuthGuard} from './shared/guards/auth-guard';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {QuizComponent} from './pages/quiz/quiz.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {LoginComponent} from './pages/login/login.component';
 import {CumulativeSummaryComponent} from './pages/cumulative-summary/cumulative-summary.component';
@@ -40,6 +41,11 @@ export const AppRoutes: Routes = [
       {
         path: 'presentation/:quizId',
         component: PresentationComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'quiz/:quizId',
+        component: QuizComponent,
         canActivate: [AuthGuard]
       },
       {

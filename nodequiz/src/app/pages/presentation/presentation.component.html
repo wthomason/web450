@@ -21,7 +21,9 @@
             </p-carousel>
         </mat-card-content>
         <mat-card-actions>
-            <p>Put take quiz button here!!!!!</p>
+          <button fxFlex mat-raised-button color="primary" (click)="quizPage(quiz.quizId)">Take Quiz</button>
         </mat-card-actions>
     </mat-card>
+    <br /><br />
+    <button mat-fab color="warn" (click)="backPage()">Back</button>
 </div>

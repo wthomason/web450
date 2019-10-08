@@ -21,6 +21,7 @@ export class BaseLayoutComponent implements OnInit {
 
   constructor(private cookieService: CookieService, private router: Router) { }
 
+
   ngOnInit() {
   }
 
@@ -29,5 +30,7 @@ export class BaseLayoutComponent implements OnInit {
     this.cookieService.delete('isAuthenticated');
     this.router.navigate(['/session/login']);
   }
+
+
 
 }

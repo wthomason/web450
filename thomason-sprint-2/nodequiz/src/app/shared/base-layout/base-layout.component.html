@@ -1,0 +1,17 @@
+<div>
+
+
+  <!-- Main page content -->
+  <main>
+    <a routerLink="/dashboard/cumulative-summary">
+      cumulative Summary
+    </a><br><br>
+    <a routerLink="/dashboard">
+      Dashboard
+    </a><br><br>
+    <div style="width: 100px;">
+    <button fxFlex mat-raised-button color="basic" (click)="logout()">Logout</button>
+    </div>
+    <router-outlet></router-outlet>
+  </main>
+</div>
