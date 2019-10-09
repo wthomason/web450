@@ -3,6 +3,7 @@
  <div style="width: 50%; margin-top: 2%; margin-left: 20%;" fxLayout="column">
   <mat-card class="mat-elevation-z8">
       <mat-card-title style="text-align:center"><h1>{{quiz.quizName}}</h1></mat-card-title>
+      <!--<p>EmployeeId: {{employeeId}}</p>-->
       <mat-card-content>
           <form [formGroup]="form" (ngSubmit)="login(); form.reset();" #loginForm>
               <mat-card style="width: 80%; margin: 0 auto;">
@@ -15,12 +16,9 @@
                           {{ question.questionAsked }}
                           <br><br>
 
-
-                          <mat-radio-group aria-label="Select an option">
-
-                            <mat-radio-button class="quiz-radio-group" *ngFor="let questionAnswers of question.answers" value="questionAnswers">{{ questionAnswers }} <br></mat-radio-button>
-
-                          </mat-radio-group>
+                         <!--<mat-radio-group name="question{{question.questionId}}" aria-label="">-->
+                            <mat-radio-button class="quiz-radio-group" *ngFor="let questionAnswers of question.answers"  [checked]="question[questionId]" value="questionAnswers;question[questionAnswer]" name="question{{question.questionId}}">{{ questionAnswers }} <br></mat-radio-button>
+                          <!--</mat-radio-group>-->
 
                            <br><br>
                         </li>

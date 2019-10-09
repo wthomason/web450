@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
    this.http.get('/api/employees/' + employeeId).subscribe(res => {
     if (res) {
       this.cookieService.set('isAuthenticated', 'true', 1);
+      this.cookieService.set('employeeId', employeeId, 1);
       this.router.navigate(['/dashboard']);
     } else {
       this.errorMessage = "The employee Id you entered is invalid, please try again.";

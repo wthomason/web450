@@ -22,16 +22,21 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 export class QuizComponent implements OnInit {
 
   quiz: any;
+  presentation: any;
+  quizResults: any;
   urlParamId: string;
+  employeeId: string;
   errorMessage: string;
   form: FormGroup;
+  name:string;
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router:Router, private fb: FormBuilder, private location: Location) {
+  constructor(private route: ActivatedRoute, private cookieService: CookieService, private http: HttpClient, private router:Router, private fb: FormBuilder, private location: Location) {
 
     this.urlParamId = route.snapshot.paramMap.get('quizId');
+    this.employeeId = this.cookieService.get('employeeId');
 
-    this.http.get('/api/quizzes/'+this.urlParamId).subscribe(res => {
+    this.http.get('/api/quizzes/' + this.urlParamId).subscribe(res => {
       if (res) {
         return this.quiz = res;
       } else {
@@ -50,6 +55,10 @@ export class QuizComponent implements OnInit {
 
   backPage(){
     this.location.back();
+  }
+
+  onSubmit(form){
+
   }
 
 }
