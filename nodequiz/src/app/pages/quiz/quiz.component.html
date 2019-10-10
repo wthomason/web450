@@ -25,6 +25,7 @@
                             [checked]="qs[question.questionId]"  
                             value="{{questionAnswers}};{{question.questionAnswer}}" 
                             name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
+
                             -->
                         
                             <mat-radio-button class="quiz-radio-group"  
@@ -54,7 +55,6 @@
           <br /><br />
           <button mat-fab color="warn" (click)="backPage()">Back</button>
 
-          <p>{{quizResults}}</p>
       </mat-card-content>
   </mat-card>
 </div>
