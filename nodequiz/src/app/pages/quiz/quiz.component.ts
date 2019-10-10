@@ -63,8 +63,8 @@ export class QuizComponent implements OnInit {
     this.quizResults = form;
     this.quizResults['employeeId'] = this.employeeId; //adds employeeId to quizResults object
     this.quizResults['quizId'] = this.urlParamId; //adds quizId to the quizResults object
-    
-    alert(this.quizResults);
+
+    console.log(this.quizResults);
   }
 
 }
