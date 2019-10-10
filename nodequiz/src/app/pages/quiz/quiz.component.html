@@ -16,15 +16,25 @@
                           {{ question.questionAsked }}
                           <br><br>
 
-                         <!--<mat-radio-group name="question{{question.questionId}}" aria-label=""> [(ngModel)]="qs[questionId]"-->
-                        <mat-radio-button class="quiz-radio-group" 
-                            *ngFor="let questionAnswers of question.answers" 
-                            [(ngModel)]="qs[questionId]" 
+                        
+                        <div *ngFor="let questionAnswers of question.answers">
+
+                    <!--
+                        <input class="quiz-radio-group"  
+                        [(ngModel)]="qs[question.questionId]" 
+                        [checked]="qs[question.questionId]"  
+                        value="{{questionAnswers}};{{question.questionAnswer}}" 
+                        name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
+                        -->
+                       
+                        <mat-radio-button class="quiz-radio-group"  
+                            [(ngModel)]="qs[question.questionId]" 
                             [checked]="qs[question.questionId]"  
                             value="{{questionAnswers}};{{question.questionAnswer}}" 
                             name="q{{question.questionId}}">{{ questionAnswers }} <br>
                         </mat-radio-button>
-                          <!--</mat-radio-group>-->
+                 
+                        </div>
 
                            <br><br>
                         </li>
