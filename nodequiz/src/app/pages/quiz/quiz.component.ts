@@ -29,8 +29,8 @@ export class QuizComponent implements OnInit {
   errorMessage: string;
   form: FormGroup;
   name:string;
-  q:any;
-  qs:any;
+  q:any = [];
+  qs:any = [];
 
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private http: HttpClient, private router:Router, private fb: FormBuilder, private location: Location) {
@@ -62,6 +62,8 @@ export class QuizComponent implements OnInit {
   onSubmit(form){
     this.quizResults = form;
     this.quizResults['employeeId'] = this.employeeId; //adds employeeId to quizResults object
+    this.quizResults['quizId'] = this.urlParamId; //adds quizId to the quizResults object
+    
     alert(this.quizResults);
   }
 

@@ -5,7 +5,7 @@
       <mat-card-title style="text-align:center"><h1>{{quiz.quizName}}</h1></mat-card-title>
       <!--<p>EmployeeId: {{employeeId}}</p>-->
       <mat-card-content>
-          <form [formGroup]="form" (ngSubmit)="onSubmit(quizForm.value); quizForm.reset();">
+          <form [formGroup]="form" (ngSubmit)="onSubmit(form.value); quizForm.reset();">
               <mat-card style="width: 80%; margin: 0 auto;">
                   <mat-card-content fxLayout="column" fxLayoutGap="10px">
 
@@ -16,25 +16,25 @@
                           {{ question.questionAsked }}
                           <br><br>
 
-                        
+                          
                         <div *ngFor="let questionAnswers of question.answers">
 
-                    <!--
-                        <input class="quiz-radio-group"  
-                        [(ngModel)]="qs[question.questionId]" 
-                        [checked]="qs[question.questionId]"  
-                        value="{{questionAnswers}};{{question.questionAnswer}}" 
-                        name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
-                        -->
-                       
-                        <mat-radio-button class="quiz-radio-group"  
+                        <!--
+                            <input class="quiz-radio-group"  
                             [(ngModel)]="qs[question.questionId]" 
                             [checked]="qs[question.questionId]"  
                             value="{{questionAnswers}};{{question.questionAnswer}}" 
-                            name="q{{question.questionId}}">{{ questionAnswers }} <br>
-                        </mat-radio-button>
+                            name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
+                            -->
+                        
+                            <mat-radio-button class="quiz-radio-group"  
+                                [(ngModel)]="qs[question.questionId]" 
+                                [checked]="qs[question.questionId]"  
+                                value="{{questionAnswers}};{{question.questionAnswer}}" 
+                                formControlName="q{{question.questionId}}">{{ questionAnswers }} <br>
+                            </mat-radio-button>
                  
-                        </div>
+                        </div><!--End of questionAnswers loop-->
 
                            <br><br>
                         </li>
