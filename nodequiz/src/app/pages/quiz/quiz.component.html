@@ -16,26 +16,27 @@
                           {{ question.questionAsked }}
                           <br><br>
 
-                          
+
                         <div *ngFor="let questionAnswers of question.answers">
 
-                        <!--
-                            <input class="quiz-radio-group"  
-                            [(ngModel)]="qs[question.questionId]" 
-                            [checked]="qs[question.questionId]"  
-                            value="{{questionAnswers}};{{question.questionAnswer}}" 
+
+                            <input class="quiz-radio-group"
+                            [(ngModel)]="qs[question.questionId]"
+                            [(checked)]="qs[question.questionId]"
+                            value="{{questionAnswers}};{{question.questionAnswer}}"
                             name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
 
-                            -->
-                        
-                            <mat-radio-button class="quiz-radio-group"  
+
+                            <!--
+                            <mat-radio-button class="quiz-radio-group"
                                 [(ngModel)]="qs[question.questionId]" [(checked)]="qs[question.questionId]"
                                 [ngModelOptions]="{standalone: true}"
                                 ngDefaultControl
-                                value="{{questionAnswers}};{{question.questionAnswer}}" 
+                                value="{{questionAnswers}};{{question.questionAnswer}}"
                                 name="q{{question.questionId}}">{{ questionAnswers }} <br>
                             </mat-radio-button>
-                 
+                          -->
+
                         </div><!--End of questionAnswers loop-->
 
                            <br><br>
