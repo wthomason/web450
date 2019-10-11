@@ -9,4 +9,17 @@
 	"quizName": "Test",
 	"quizDescription": "Testing the quize add",
 	"cumulativeScore": 0
-}</con:request><con:originalUri>http://localhost/api/quizzes</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+}</con:request><con:originalUri>http://localhost/api/quizzes</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Add Results" path="/api/results" id="17728b97-429e-467d-9256-fb099a6ef5b3"><con:settings/><con:parameters/><con:method name="Method 1" id="562f9aaa-fee5-4418-bc10-25abfeb2a785" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:res="http://localhost/api/results">res:Response</con:element></con:representation><con:request name="Request 1" id="079b0924-1a98-498a-98f5-40f59620a7ee" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
+    "employeeId": "1008",
+    "quizId": "1001",
+    "q1": "Testing",
+    "q2": "Testing",
+    "q3": "Testing",
+    "q4": "Testing",
+    "q5": "Testing",
+    "q6": "Testing",
+    "q7": "Testing",
+    "q8": "Testing",
+    "q9": "Testing",
+    "q10": "Testing"
+  }</con:request><con:originalUri>http://localhost/api/results</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

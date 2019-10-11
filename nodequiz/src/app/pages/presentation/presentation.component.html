@@ -3,7 +3,7 @@
 <br><br>
 
 <div fxLayout="column" style="margin-top: 5%; margin-left: 10%; width: 60%;">
-    <mat-card class="mat-elevation-z8">
+    <mat-card class="mat-elevation-z8" *ngIf="quiz">
         <mat-card-title>{{quiz.quizName}}</mat-card-title>
         <mat-card-content>
             <p-carousel [value]="quiz.presentation" numVisible="1">

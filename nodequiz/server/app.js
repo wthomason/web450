@@ -15,6 +15,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Employee = require('./db-models/employee');
 const Quiz = require('./db-models/quiz');
+const Result = require('./db-models/results');
 
 let app = express();
 
@@ -118,6 +119,37 @@ app.get('/api/quizzes/:id', function(req, res, next) {
     }
   })
 });
+
+/*************** Quiz Results API *******************************************/
+
+//Create Quiz Result
+app.post('/api/results', function(req, res, next) {
+  const result = {
+    employeeId: req.body.employeeId,
+    quizId: req.body.quizId,
+    q1: req.body.q1,
+    q2: req.body.q2,
+    q3: req.body.q3,
+    q4: req.body.q4,
+    q5: req.body.q5,
+    q6: req.body.q6,
+    q7: req.body.q7,
+    q8: req.body.q8,
+    q9: req.body.q9,
+    q10: req.body.q10
+  };
+
+  Result.create(result, function(err, results) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(results);
+      res.json(results);
+    }
+  });
+});
+
 
 /**
  * Creates an express server and listens on port 3000

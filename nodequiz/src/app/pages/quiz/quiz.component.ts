@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { keyValuesToMap } from '@angular/flex-layout/extended/typings/style/style-transforms';
 
 @Component({
   selector: 'app-quiz',
@@ -31,7 +32,11 @@ export class QuizComponent implements OnInit {
   name:string;
   q:any = [];
   qs:any = [];
-
+  score: number;
+  isShown:boolean = false;
+  displayResults:any;
+  
+  
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private http: HttpClient, private router:Router, private fb: FormBuilder, private location: Location) {
 
@@ -57,12 +62,33 @@ export class QuizComponent implements OnInit {
     this.location.back();
   }
 
+  show(){
+  this.isShown = ! this.isShown;
+  }
+
+
   onSubmit(form){
+
+  
+  console.log(form);
+   
     this.quizResults = form;
+    //this.quizResults['score'] = this.score;
     this.quizResults['employeeId'] = this.employeeId; //adds employeeId to quizResults object
     this.quizResults['quizId'] = this.urlParamId; //adds quizId to the quizResults object
+    this.displayResults = JSON.stringify(this.quizResults);
 
-    console.log(this.quizResults);
+    this.http.post('/api/results/', this.displayResults).subscribe(
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+      });
+    
+
+    this.show();
+    //console.log(this.quizResults);
   }
 
 }
