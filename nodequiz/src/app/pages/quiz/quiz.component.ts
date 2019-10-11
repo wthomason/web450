@@ -50,9 +50,7 @@ export class QuizComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.form = this.fb.group({
 
-    });
   }
 
   backPage(){

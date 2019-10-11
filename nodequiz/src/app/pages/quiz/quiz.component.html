@@ -1,11 +1,11 @@
 
 
  <div style="width: 50%; margin-top: 2%; margin-left: 20%;" fxLayout="column">
-  <mat-card class="mat-elevation-z8">
-      <mat-card-title style="text-align:center"><h1>{{quiz.quizName}}</h1></mat-card-title>
+  <mat-card class="mat-elevation-z8" *ngIf="quiz">
+      <mat-card-title style="text-align:center" ><h1>{{quiz.quizName}}</h1></mat-card-title>
       <!--<p>EmployeeId: {{employeeId}}</p>-->
       <mat-card-content>
-          <form [formGroup]="form" (ngSubmit)="onSubmit(form.value);">
+          <form #quizForm="ngForm" (ngSubmit)="onSubmit(quizForm.value);">
               <mat-card style="width: 80%; margin: 0 auto;">
                   <mat-card-content fxLayout="column" fxLayoutGap="10px">
 
@@ -20,18 +20,16 @@
                         <div *ngFor="let questionAnswers of question.answers">
 
 
-                            <input class="quiz-radio-group"
+                            <input class=""
                             [(ngModel)]="qs[question.questionId]"
-                            [(checked)]="qs[question.questionId]"
+                            [checked]="qs[question.questionId]"
                             value="{{questionAnswers}};{{question.questionAnswer}}"
-                            name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br>
+                            name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br><br>
 
 
                             <!--
                             <mat-radio-button class="quiz-radio-group"
-                                [(ngModel)]="qs[question.questionId]" [(checked)]="qs[question.questionId]"
-                                [ngModelOptions]="{standalone: true}"
-                                ngDefaultControl
+                                [(ngModel)]="qs[question.questionId]" [checked]="qs[question.questionId]"
                                 value="{{questionAnswers}};{{question.questionAnswer}}"
                                 name="q{{question.questionId}}">{{ questionAnswers }} <br>
                             </mat-radio-button>
