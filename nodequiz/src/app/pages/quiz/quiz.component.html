@@ -6,7 +6,10 @@
       <mat-card-content>
           <div *ngIf="isShown == true">
               <h1>Results</h1>
-              <p *ngIf="quizResults">{{displayResults}}</p>
+              <h2>Displaying for employee: {{employeeId}}</h2>
+              <div *ngIf="quizResults">
+                <h3>Score: {{score}}</h3>
+              </div>
           </div>
           <form #quizForm="ngForm" (ngSubmit)="onSubmit(quizForm.value);" *ngIf="isShown == false">
               <mat-card style="width: 80%; margin: 0 auto;">
@@ -27,7 +30,7 @@
                             [checked]="qs[question.questionId]"
                             value="{{question.questionId}};{{questionAnswers}};{{question.questionAnswer}}"
                             name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br><br>
-                                                     
+
 
                         </div><!--End of questionAnswers loop-->
 

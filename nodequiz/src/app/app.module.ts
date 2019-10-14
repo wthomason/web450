@@ -39,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { CarouselModule } from 'primeng/carousel';
+import { MatTableModule } from '@angular/material'
 
 
 
@@ -62,6 +63,7 @@ import { CarouselModule } from 'primeng/carousel';
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
     MatCardModule,
     MatButtonModule,
+    MatTableModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatRadioModule,

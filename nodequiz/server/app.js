@@ -16,6 +16,7 @@ const mongoose = require('mongoose');
 const Employee = require('./db-models/employee');
 const Quiz = require('./db-models/quiz');
 const Result = require('./db-models/results');
+const Summary = require('./db-models/summary');
 
 let app = express();
 
@@ -141,6 +142,42 @@ app.post('/api/results', function(req, res, next) {
   });
 });
 
+
+/************************ Summary API ************************ */
+//Create Summary Result
+app.post('/api/summary', function(req, res, next) {
+  const summary = {
+    employeeId: req.body.employeeId,
+    quizId: req.body.quizId,
+    quizName: req.body.quizName,
+    dateTaken: req.body.dateTaken,
+    score: req.body.score
+  };
+
+  Summary.create(summary, function(err, summaries) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(summaries);
+      res.json(summaries);
+    }
+  });
+});
+
+
+//Get all Quizzes
+app.get('/api/summary/all', function(req, res, next) {
+  Summary.find(function(err, summaries) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }  else {
+      console.log(summaries);
+      res.json(summaries);
+    }
+  })
+});
 
 /**
  * Creates an express server and listens on port 3000

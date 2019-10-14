@@ -7,13 +7,14 @@
 ======================================
 */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { keyValuesToMap } from '@angular/flex-layout/extended/typings/style/style-transforms';
+import * as moment from "moment";
 
 @Component({
   selector: 'app-quiz',
@@ -29,11 +30,14 @@ export class QuizComponent implements OnInit {
   employeeId: string;
   errorMessage: string;
   form: FormGroup;
-  name:string;
-  q:any = [];
-  qs:any = [];
-  isShown:boolean = false;
-  displayResults:any;
+  name: string;
+  q: any = [];
+  qs: any = [];
+  isShown: boolean = false;
+  displayResults: any;
+  quizSummary: any;
+  cumulativeSummaryObject: object;
+  score: string;
 
 
 
@@ -73,13 +77,14 @@ export class QuizComponent implements OnInit {
   const totalPossiblePoints = 100;
   const questionCount = this.quiz.questions.length;
   let pointsPerQuestion = totalPossiblePoints / questionCount;
-  console.log('Points Per Question: ' + pointsPerQuestion);
+  //console.log('Points Per Question: ' + pointsPerQuestion);
   let score = 0;
 
   let correctRunningTotal = 0;
   let quizQuestionId = [];
   let selectedAnswers = [];
   let correctAnswers = [];
+
 
 
     this.http.post('/api/results/', {
@@ -111,27 +116,86 @@ export class QuizComponent implements OnInit {
       }
     }
 
-    console.log('questionId array: ' + quizQuestionId);
-    console.log('selectedAnswers array: ' + selectedAnswers);
-    console.log('correctAnswers array: ' + correctAnswers);
+    //console.log('questionId array: ' + quizQuestionId);
+    //console.log('selectedAnswers array: ' + selectedAnswers);
+    //console.log('correctAnswers array: ' + correctAnswers);
+    //console.log('LOOP FOR ANSWERS STARTS HERE!!!!!!!!!');
+    //console.log('selectedAnswers Length: ' + selectedAnswers.length);
 
-    for(var i = 0; i < selectedAnswers.length; i++){
+/******************************WONT CHECK ALL QUESTIONS, SKIPS THE FIRST AND THIRD QUESTION. */
+    for(let i = 0; i < selectedAnswers.length; i++){
 
-      for(var j = 0; j < correctAnswers.length; j++){
+      for(let x = 0; x < correctAnswers.length; x++){
 
-        if( selectedAnswers[i] == correctAnswers[j]){
+        if( selectedAnswers[i] === correctAnswers[x]){
 
-          correctRunningTotal ++;
+          correctRunningTotal += 1;
+          console.log('selectedAnswers: ' + selectedAnswers[i] + ' correctAnswers: ' + correctAnswers[x] + ' correctRunningTotal: ' + correctRunningTotal);
 
         }
       }
+
     }
 
+    //console.log('correctRunningTotal: ' + correctRunningTotal);
     score = correctRunningTotal * pointsPerQuestion;
+   //console.log(score);
 
-    console.log(score);
+    //let correctAnswersSummary = [];
+    //let selectedAnswersSummary = [];
 
-    this.show();
+    /*
+    for(let question of this.quiz.questions){
+      //for (let i = 0; i < selectedAnswers.length; i++){
+        correctAnswersSummary.push({
+          questionId: question.questionId,
+          questionText: question.questionAsked,
+          correctAnswer: question.questionAnswer,
+          //answerGiven: selectedAnswers[i]
+        })
+      //}
+    }
+    */
+
+
+
+/***********************************************FIX THIS*********************************** */
+
+   // this.quizSummary['score'] = score;
+    //this.quizSummary['questions'] = this.quiz.questions;
+    //this.quizSummary['correctAnswers'] = correctAnswers;
+    //this.quizSummary['selectedAnswers'] = selectedAnswers;
+
+
+
+    this.cumulativeSummaryObject = {
+      employeeId: this.employeeId,
+      quizId: this.urlParamId,
+      quizName: this.quiz.quizName,
+      dateTaken: moment().format('MM/DD/YYYY'),
+      score: score
+    }
+
+
+    this.http.post('/api/summary/', {
+      employeeId: this.cumulativeSummaryObject['employeeId'],
+      quizId: this.cumulativeSummaryObject['quizId'],
+      quizName: this.cumulativeSummaryObject['quizName'],
+      dateTaken: this.cumulativeSummaryObject['dateTaken'],
+      score: this.cumulativeSummaryObject['score']
+    }).subscribe(
+      res =>{
+
+      },
+      err => {
+        console.log("POST call to results collection in error", err);
+      },
+      () => {
+          console.log("The POST to results collection is now completed.");
+          this.show();
+      });
+
+
     //console.log(this.quizResults);
   }
 
