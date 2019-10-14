@@ -32,11 +32,10 @@ export class QuizComponent implements OnInit {
   name:string;
   q:any = [];
   qs:any = [];
-  score: number;
   isShown:boolean = false;
   displayResults:any;
-  
-  
+
+
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private http: HttpClient, private router:Router, private fb: FormBuilder, private location: Location) {
 
@@ -69,23 +68,68 @@ export class QuizComponent implements OnInit {
 
   onSubmit(form){
 
-  
+
   console.log(form);
-   
+  const totalPossiblePoints = 100;
+  const questionCount = this.quiz.questions.length;
+  let pointsPerQuestion = totalPossiblePoints / questionCount;
+  console.log('Points Per Question: ' + pointsPerQuestion);
+  let score = 0;
+
+  let correctRunningTotal = 0;
+  let quizQuestionId = [];
+  let selectedAnswers = [];
+  let correctAnswers = [];
+
+
+    this.http.post('/api/results/', {
+      employeeId: this.employeeId,
+      quizId: this.urlParamId,
+      result: JSON.stringify(form)
+    }).subscribe(
+      err => {
+        console.log("POST call to results collection in error", err);
+      },
+      () => {
+          console.log("The POST to results collection is now completed.");
+      });
+
     this.quizResults = form;
-    //this.quizResults['score'] = this.score;
     this.quizResults['employeeId'] = this.employeeId; //adds employeeId to quizResults object
     this.quizResults['quizId'] = this.urlParamId; //adds quizId to the quizResults object
     this.displayResults = JSON.stringify(this.quizResults);
 
-    this.http.post('/api/results/', this.displayResults).subscribe(
-      response => {
-          console.log("POST call in error", response);
-      },
-      () => {
-          console.log("The POST observable is now completed.");
-      });
-    
+    for(const prop in this.quizResults){
+
+      if(this.quizResults.hasOwnProperty(prop)){
+
+        if(prop !== 'employeeId' && prop !== 'quizId'){
+          quizQuestionId.push(this.quizResults[prop].split(';')[0]);
+          selectedAnswers.push(this.quizResults[prop].split(';')[1]);
+          correctAnswers.push(this.quizResults[prop].split(';')[2]);
+        }
+      }
+    }
+
+    console.log('questionId array: ' + quizQuestionId);
+    console.log('selectedAnswers array: ' + selectedAnswers);
+    console.log('correctAnswers array: ' + correctAnswers);
+
+    for(var i = 0; i < selectedAnswers.length; i++){
+
+      for(var j = 0; j < correctAnswers.length; j++){
+
+        if( selectedAnswers[i] == correctAnswers[j]){
+
+          correctRunningTotal ++;
+
+        }
+      }
+    }
+
+    score = correctRunningTotal * pointsPerQuestion;
+
+    console.log(score);
 
     this.show();
     //console.log(this.quizResults);

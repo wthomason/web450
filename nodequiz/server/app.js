@@ -36,7 +36,7 @@ const connString = 'mongodb+srv://web450:admin@cluster0-aqjgi.mongodb.net/web450
 mongoose.connect(connString, {promiseLibrary:require('bluebird'), useNewUrlParser: true})
         .then(() => console.debug('Connection to the MongoDB instance was successful!'))
         .catch((err) => console.debug('MongoDB Error: ' + err.message));
- 
+
 
 /************************* API routes go below this line ********************/
 
@@ -127,16 +127,7 @@ app.post('/api/results', function(req, res, next) {
   const result = {
     employeeId: req.body.employeeId,
     quizId: req.body.quizId,
-    q1: req.body.q1,
-    q2: req.body.q2,
-    q3: req.body.q3,
-    q4: req.body.q4,
-    q5: req.body.q5,
-    q6: req.body.q6,
-    q7: req.body.q7,
-    q8: req.body.q8,
-    q9: req.body.q9,
-    q10: req.body.q10
+    result: req.body.result
   };
 
   Result.create(result, function(err, results) {

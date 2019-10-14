@@ -12,17 +12,8 @@ const mongoose = require('mongoose');
 let resultSchema = mongoose.Schema({
   employeeId: String,
   quizId: String,
-  q1: String,
-  q2: String,
-  q3: String,
-  q4: String,
-  q5: String,
-  q6: String,
-  q7: String,
-  q8: String,
-  q9: String,
-  q10: String
-  
+  result: String
+
 });
 
 module.exports = mongoose.model('Result', resultSchema);
