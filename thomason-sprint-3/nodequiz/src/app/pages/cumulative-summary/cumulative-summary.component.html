@@ -1,0 +1,57 @@
+<div *ngIf="summaries">
+<br><br><br>
+    <table style="width:85%; margin:0 auto;">
+        <tr>
+          <th>Employee ID</th>
+          <th>Quiz ID</th>
+          <th>Quiz Name</th>
+          <th>Date Taken</th>
+          <th>Score</th>
+        </tr>
+        <tr *ngFor="let summary of summaries;">
+          <td>{{summary.employeeId}}</td>
+          <td>{{summary.quizId}}</td>
+          <td>{{summary.quizName}}</td>
+          <td>{{summary.dateTaken}}</td>
+          <td>{{summary.score}}</td>
+        </tr>
+    </table>
+<!--
+<table mat-table [dataSource]="summaries" class="mat-elevation-z8">
+
+
+
+    <ng-container matColumnDef="employeeId">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="quizId">
+      <th mat-header-cell *matHeaderCellDef> Quiz ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizId}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="uizName">
+      <th mat-header-cell *matHeaderCellDef> Quiz Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizName}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="dateTaken">
+      <th mat-header-cell *matHeaderCellDef> Date Taken </th>
+      <td mat-cell *matCellDef="let element"> {{element.dateTaken}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef> Score </th>
+        <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>-->
+
+</div>

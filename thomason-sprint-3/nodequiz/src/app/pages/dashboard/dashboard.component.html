@@ -1,0 +1,19 @@
+<h1>Welcome to the Quiz Selection Page!</h1>
+<small *ngIf="errorMessage">{{ errorMessage }}<br/></small>
+ <div *ngIf="quizzes">  
+    <div style="width: 30%; margin-top: 12%; margin-left: 10%;" fxLayout="column" fxLayoutAlign="center" *ngFor="let quiz of quizzes">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-title>{{ quiz.quizName }}</mat-card-title>
+            <mat-card-content>
+                <img style="max-width: 95%;" src="assets/presentation/{{ quiz.quizId }}/{{ quiz.presentation[0].imagePath }}">
+                <p>{{ quiz.quizDescription }}</p>
+                <br /><br />
+                <mat-card-content>
+                <button fxFlex mat-raised-button color="primary" (click)="presentationPage(quiz.quizId)">View Presentation</button>     
+                <br /><br />
+                </mat-card-content> 
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+  </div>

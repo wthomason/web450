@@ -1,0 +1,29 @@
+
+<small *ngIf="errorMessage">{{ errorMessage }}<br/></small>
+<br><br>
+
+<div fxLayout="column" style="margin-top: 5%; margin-left: 10%; width: 60%;">
+    <mat-card class="mat-elevation-z8" *ngIf="quiz">
+        <mat-card-title>{{quiz.quizName}}</mat-card-title>
+        <mat-card-content>
+            <p-carousel [value]="quiz.presentation" numVisible="1">
+                <ng-template style="text-align: center;" let-item pTemplate="item">
+                    <br /><br />
+                    <div fxLayout="column" fxLayoutAlign="center center">
+                        <div fxFlex>
+                            <img style="max-width: 95%;" src="./assets/presentation/{{urlParamId}}/{{item.imagePath}}">
+                        </div>
+                        <div fxFlex>
+                            <p>{{item.imageName}}</p>
+                        </div>
+                    </div><br /><br />
+                </ng-template>
+            </p-carousel>
+        </mat-card-content>
+        <mat-card-actions>
+          <button fxFlex mat-raised-button color="primary" (click)="quizPage(quiz.quizId)">Take Quiz</button>
+        </mat-card-actions>
+    </mat-card>
+    <br /><br />
+    <button mat-fab color="warn" (click)="backPage()">Back</button>
+</div>
