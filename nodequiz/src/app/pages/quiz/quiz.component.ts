@@ -7,7 +7,7 @@
 ======================================
 */
 
-import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
+import { Component, OnInit, ModuleWithComponentFactories,  HostListener, ElementRef } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -35,9 +35,11 @@ export class QuizComponent implements OnInit {
   qs: any = [];
   isShown: boolean = false;
   displayResults: any;
-  quizSummary: any;
+  quizSummary: any = [];
   cumulativeSummaryObject: object;
   score: string;
+  isShow: boolean; //scroll to top
+  topPosToStartShowing = 100; //scroll to top
 
 
 
@@ -69,11 +71,36 @@ export class QuizComponent implements OnInit {
   this.isShown = ! this.isShown;
   }
 
+  @HostListener('window:scroll')
+  checkScroll() {
+      
+    // window의 scroll top
+    // Both window.pageYOffset and document.documentElement.scrollTop returns the same result in all the cases. window.pageYOffset is not supported below IE 9.
+
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    console.log('[scroll]', scrollPosition);
+    
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+  }
+
+  gotoTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
+
 
   onSubmit(form){
 
 
-  console.log(form);
+  //console.log(form);
   const totalPossiblePoints = 100;
   const questionCount = this.quiz.questions.length;
   let pointsPerQuestion = totalPossiblePoints / questionCount;
@@ -81,7 +108,7 @@ export class QuizComponent implements OnInit {
   let score = 0;
 
   let correctRunningTotal = 0;
-  let quizQuestionId = [];
+  let quizQuestions = [];
   let selectedAnswers = [];
   let correctAnswers = [];
 
@@ -92,11 +119,14 @@ export class QuizComponent implements OnInit {
       quizId: this.urlParamId,
       result: JSON.stringify(form)
     }).subscribe(
+      res =>{
+
+      },
       err => {
         console.log("POST call to results collection in error", err);
       },
       () => {
-          console.log("The POST to results collection is now completed.");
+        console.log("The POST to results collection is now completed.");
       });
 
     this.quizResults = form;
@@ -109,7 +139,7 @@ export class QuizComponent implements OnInit {
       if(this.quizResults.hasOwnProperty(prop)){
 
         if(prop !== 'employeeId' && prop !== 'quizId'){
-          quizQuestionId.push(this.quizResults[prop].split(';')[0]);
+          quizQuestions.push(this.quizResults[prop].split(';')[0]);
           selectedAnswers.push(this.quizResults[prop].split(';')[1]);
           correctAnswers.push(this.quizResults[prop].split(';')[2]);
         }
@@ -122,49 +152,40 @@ export class QuizComponent implements OnInit {
     //console.log('LOOP FOR ANSWERS STARTS HERE!!!!!!!!!');
     //console.log('selectedAnswers Length: ' + selectedAnswers.length);
 
-/******************************WONT CHECK ALL QUESTIONS, SKIPS THE FIRST AND THIRD QUESTION. */
+
     for(let i = 0; i < selectedAnswers.length; i++){
 
-      for(let x = 0; x < correctAnswers.length; x++){
-
-        if( selectedAnswers[i] === correctAnswers[x]){
+        if( selectedAnswers[i] === correctAnswers[i]){
 
           correctRunningTotal += 1;
-          console.log('selectedAnswers: ' + selectedAnswers[i] + ' correctAnswers: ' + correctAnswers[x] + ' correctRunningTotal: ' + correctRunningTotal);
+          //console.log('INSIDE if statement');
+          //console.log('selectedAnswers: ' + selectedAnswers[i] + ' correctAnswers: ' + correctAnswers[i] + ' correctRunningTotal: ' + correctRunningTotal);
 
         }
-      }
-
+      
     }
 
     //console.log('correctRunningTotal: ' + correctRunningTotal);
     score = correctRunningTotal * pointsPerQuestion;
-   //console.log(score);
+    //console.log(score);
 
-    //let correctAnswersSummary = [];
-    //let selectedAnswersSummary = [];
 
-    /*
-    for(let question of this.quiz.questions){
-      //for (let i = 0; i < selectedAnswers.length; i++){
-        correctAnswersSummary.push({
-          questionId: question.questionId,
-          questionText: question.questionAsked,
-          correctAnswer: question.questionAnswer,
-          //answerGiven: selectedAnswers[i]
-        })
-      //}
+   
+    for (let i = 0; i < selectedAnswers.length; i++){
+      this.quizSummary.push({
+        question: quizQuestions[i],
+        answer: correctAnswers[i],
+        answerGiven: selectedAnswers[i]
+      })
     }
-    */
+   
 
+  this.quizSummary['score'] = score;
+   //this.quizSummary['questions'] = this.quiz.questions;
+  // this.quizSummary['correctAnswers'] = correctAnswers;
+   //this.quizSummary['selectedAnswers'] = selectedAnswers;
 
-
-/***********************************************FIX THIS*********************************** */
-
-   // this.quizSummary['score'] = score;
-    //this.quizSummary['questions'] = this.quiz.questions;
-    //this.quizSummary['correctAnswers'] = correctAnswers;
-    //this.quizSummary['selectedAnswers'] = selectedAnswers;
+  //console.log(this.quizSummary);
 
 
 
@@ -188,11 +209,12 @@ export class QuizComponent implements OnInit {
 
       },
       err => {
-        console.log("POST call to results collection in error", err);
+        console.log("POST call to Summary collection in error", err);
       },
       () => {
-          console.log("The POST to results collection is now completed.");
+          console.log("The POST to Summary collection is now completed.");
           this.show();
+          this.gotoTop()
       });
 
 

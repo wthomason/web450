@@ -5,10 +5,55 @@
       <mat-card-title style="text-align:center" ><h1>{{quiz.quizName}}</h1></mat-card-title>
       <mat-card-content>
           <div *ngIf="isShown == true">
-              <h1>Results</h1>
-              <h2>Displaying for employee: {{employeeId}}</h2>
-              <div *ngIf="quizResults">
-                <h3>Score: {{score}}</h3>
+              <h1 style="text-align:center">Your Quiz Results</h1>
+              <h2 style="text-align:center">Displaying for employee: {{employeeId}}</h2>
+              <div *ngIf="quizSummary">
+
+                <mat-card-content style="text-align:center; width:60%; margin: 0 auto; border-radius: 10px; border:1px solid black; box-shadow:10px 10px 10px grey;">
+                    <br>
+                    <h2 sytle="margin:10px;">Score:
+                        <span *ngIf="quizSummary.score === 100"> 
+                            <span style="color: gold;">{{quizSummary.score}}</span>
+                        </span>
+
+                        <span *ngIf="quizSummary.score <= 99 || quizSummary.score >= 80"> 
+                            <span style="color: green;">{{quizSummary.score}}</span>
+                        </span>
+
+                        <span *ngIf="quizSummary.score <= 79 || quizSummary.score >= 61"> 
+                                <span style="color: yellowgreen;">{{quizSummary.score}}</span>
+                        </span>
+
+                        <span *ngIf="quizSummary.score <= 60"> 
+                            <span style="color: red;">{{quizSummary.score}}</span>
+                        </span>
+                        
+                        %</h2>
+                    <br>
+                </mat-card-content>
+                <br><br>
+
+                <div style="width:80%; margin:0 auto;">
+                    <div *ngFor="let summary of quizSummary;">
+
+                        <div *ngIf="summary.answer === summary.answerGiven">
+                            <p style="font-weight: bold;">Question: {{summary.question}}</p>
+                            <p >Correct Answer:  {{summary.answer}}</p>
+                            <p style="color:green;">Selected Answer:  {{summary.answerGiven}}</p>
+                        </div>
+
+                        <div *ngIf="summary.answer != summary.answerGiven">
+                            <p style="font-weight: bold;">Question: {{summary.question}}</p>
+                            <p >Correct Answer:  {{summary.answer}}</p>
+                            <p style="color:red;">Selected Answer:  {{summary.answerGiven}}</p>
+                        </div>
+                        <hr>
+                        <br>
+                    </div>
+
+                </div>
+
+
               </div>
           </div>
           <form #quizForm="ngForm" (ngSubmit)="onSubmit(quizForm.value);" *ngIf="isShown == false">
@@ -28,7 +73,7 @@
                             <input class=""
                             [(ngModel)]="qs[question.questionId]"
                             [checked]="qs[question.questionId]"
-                            value="{{question.questionId}};{{questionAnswers}};{{question.questionAnswer}}"
+                            value="{{question.questionAsked}};{{questionAnswers}};{{question.questionAnswer}}"
                             name="q{{question.questionId}}" type="radio" />{{ questionAnswers }} <br><br>
 
 
@@ -47,9 +92,11 @@
                   </mat-card-actions>
 
               </mat-card>
+
+              <br /><br />
+              <button mat-fab color="warn" (click)="backPage()">Back</button>
           </form>
-          <br /><br />
-          <button mat-fab color="warn" (click)="backPage()">Back</button>
+          
 
       </mat-card-content>
   </mat-card>
