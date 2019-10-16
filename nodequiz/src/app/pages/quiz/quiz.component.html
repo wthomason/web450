@@ -12,22 +12,22 @@
                 <mat-card-content style="text-align:center; width:60%; margin: 0 auto; border-radius: 10px; border:1px solid black; box-shadow:10px 10px 10px grey;">
                     <br>
                     <h2 sytle="margin:10px;">Score:
-                        <span *ngIf="quizSummary.score === 100"> 
+                        <span *ngIf="quizSummary.score === '100'">
                             <span style="color: gold;">{{quizSummary.score}}</span>
                         </span>
 
-                        <span *ngIf="quizSummary.score <= 99 || quizSummary.score >= 80"> 
+                        <span *ngIf="quizSummary.score < '100' || quizSummary.score >= '80'">
                             <span style="color: green;">{{quizSummary.score}}</span>
                         </span>
 
-                        <span *ngIf="quizSummary.score <= 79 || quizSummary.score >= 61"> 
+                        <span *ngIf="quizSummary.score < '80' || quizSummary.score >= '61'">
                                 <span style="color: yellowgreen;">{{quizSummary.score}}</span>
                         </span>
 
-                        <span *ngIf="quizSummary.score <= 60"> 
+                        <span *ngIf="quizSummary.score < '61'">
                             <span style="color: red;">{{quizSummary.score}}</span>
                         </span>
-                        
+
                         %</h2>
                     <br>
                 </mat-card-content>
@@ -96,7 +96,7 @@
               <br /><br />
               <button mat-fab color="warn" (click)="backPage()">Back</button>
           </form>
-          
+
 
       </mat-card-content>
   </mat-card>
